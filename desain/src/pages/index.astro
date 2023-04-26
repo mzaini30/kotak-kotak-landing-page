@@ -1,0 +1,24 @@
+---
+import LayoutBase from "../layout/base.astro";
+import Kotak from "../komponen/kotak.astro";
+---
+
+<LayoutBase>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <Kotak judul="Ini Pertama">
+      <p>Tulisan pertama</p>
+    </Kotak>
+    <Kotak judul="Tulisan Pertama">
+      <p>Tulisan kedua...</p>
+      <img
+        src="https://psikologi.fisip-unmul.ac.id/main/wp-content/uploads/2018/08/Akreditasi-Psikologi-2018-B-1024x749.jpg?resize=640%2C468"
+        alt=""
+      />
+    </Kotak>
+    <Kotak judul="Tulisan Ketiga">
+      <p>Lorem ipsum</p>
+      <p>Dolor Sit</p>
+      <p>Consectuer</p>
+    </Kotak>
+  </div>
+</LayoutBase>

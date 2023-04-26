@@ -1,0 +1,10 @@
+---
+const { judul } = Astro.props;
+---
+
+<div
+  class="border rounded p-3 [&>*]:mb-3 last:[&>*]:mb-0 shadow [&_img]:max-w-full"
+>
+  <h2 class="text-2xl font-bold">{judul}</h2>
+  <slot />
+</div>

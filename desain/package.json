@@ -1,0 +1,7 @@
+{
+	"dependencies": {
+		"@unocss/reset": "^0.51.8",
+		"astro": "^2.3.1",
+		"unocss": "^0.51.8"
+	}
+}
