@@ -9,6 +9,7 @@ License: MIT
 */
 function kotak_kotak($atts, $content = null)
 {
+    $content = do_shortcode($content);
     $isi = '<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">';
     $isi .= $content;
     $isi .= '</div>';
@@ -28,6 +29,7 @@ function kotak($atts, $content = null)
         )
     );
 
+    $content = do_shortcode($content);
     $isi = '<div class="border rounded p-3 [&>*]:mb-3 last:[&>*]:mb-0 shadow [&_img]:max-w-full">
         <div class="text-2xl font-bold">' . $judul . '</div>
       
