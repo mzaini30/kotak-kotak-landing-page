@@ -10,13 +10,18 @@ License: MIT
 function kotak_kotak($atts, $content = null)
 {
     $content = do_shortcode($content);
-    $isi = '<div class="columns-2 gap-5 [&>p]:absolute [&>p]:-z-999">';
+    $isi = '<div class="sm:columns-2 sm:gap-5 [&>p]:absolute [&>p]:-z-999">';
     $isi .= $content;
     $isi .= '</div>';
 
     return $isi;
 }
 add_shortcode('kotak_kotak', 'kotak_kotak');
+
+function menjadi_slug($string)
+{
+    return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
+}
 
 function kotak($atts, $content = null)
 {
@@ -31,10 +36,10 @@ function kotak($atts, $content = null)
 
     $content = do_shortcode($content);
     $isi = '<div
-    class="border-2 mb-5 border-solid border-black p-3 ini-kotaknya [&_img]:max-w-full astro-4OGIIRG3"
+    class="border-2 mb-5 border-solid break-inside-avoid border-black p-3 ini-kotaknya [&_img]:max-w-full astro-4OGIIRG3"
   >
     <div class="[&>*]:mb-3 last:[&>*]:mb-0 astro-4OGIIRG3">
-      <h2 class="text-3xl font-bold astro-4OGIIRG3">' . $judul . '</h2>
+      <h2 class="text-3xl font-bold astro-4OGIIRG3" id="' . menjadi_slug($judul) . '">' . $judul . '</h2>
 
       ' . $content . '
     </div>
@@ -46,7 +51,7 @@ add_shortcode('kotak', 'kotak');
 
 function tambah_gaya_css()
 {
-    wp_enqueue_style('nama-plugin-anda-style', plugins_url('index.d7072160.css', __FILE__));
+    wp_enqueue_style('nama-plugin-anda-style', plugins_url('index.57bfdcbb.css', __FILE__));
 }
 add_action('wp_enqueue_scripts', 'tambah_gaya_css');
 
