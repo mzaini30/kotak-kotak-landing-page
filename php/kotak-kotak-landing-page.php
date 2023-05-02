@@ -65,3 +65,13 @@ function tambah_tautan_join_community($links)
 }
 $plugin = plugin_basename(__FILE__);
 add_filter("plugin_action_links_$plugin", 'tambah_tautan_join_community');
+
+
+function kotak_kotak_landing_page_tutorial($links)
+{
+    $join_link = '<a href="https://jasaolahwebsite.github.io/cara-menggunakan-plugin-kotak-kotak-landing-page/">Tutorial</a>';
+    array_unshift($links, $join_link);
+    return $links;
+}
+$plugin = plugin_basename(__FILE__);
+add_filter("plugin_action_links_$plugin", 'kotak_kotak_landing_page_tutorial');
